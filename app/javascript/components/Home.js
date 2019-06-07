@@ -151,8 +151,8 @@ export default function Album() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <center>React-Spark</center>
+          <Typography className={classes.title} variant="h6" align="center" noWrap>
+            React-Spark
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -175,18 +175,16 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+              June 2019
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              Mike Tyson pushes patent for personal strand called "Knockout"
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
-                    Main call to action
+                    Read more
                   </Button>
                 </Grid>
                 <Grid item>
@@ -211,10 +209,10 @@ export default function Album() {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      CBD Accounts for $2.2 Million every year
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      Reporters state that the legalization of cannabis will impact economy.
                     </Typography>
                   </CardContent>
                   <CardActions>
