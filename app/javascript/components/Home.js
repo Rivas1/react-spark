@@ -1,9 +1,13 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 
 class Home extends React.Component {
 	render () {
 		return(
-			<div> This is the Home page. </div>
+			
+			 <Button variant="contained" color="blue">
+      			This is the home page button
+    		</Button>
 		)
 	}
 }
