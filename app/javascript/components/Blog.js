@@ -17,18 +17,9 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import Markdown from './Markdown';
-
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
-import red from '@material-ui/core/colors/red'
-
-const theme = createMuiTheme({
-	palette: {
-		type: 'dark',
-		primary: {
-			main: '#00c853'
-		}
-	}
-})
+import post1 from './blog-post.1.md';
+import post2 from './blog-post.2.md';
+import post3 from './blog-post.3.md';
 
 function MadeWithLove() {
   return (
@@ -44,26 +35,18 @@ function MadeWithLove() {
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
-    
-    
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbarTitle: {
     flex: 1,
-    color: '#00c853',
-
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
     overflowX: 'auto',
-    color: 'grey',
-    padding: '0 30px',
-    boxShadow: '0 0px 50px 0px rgba(255, 255, 255, .3)',
   },
   toolbarLink: {
     padding: theme.spacing(1),
     flexShrink: 0,
-
   },
   mainFeaturedPost: {
     position: 'relative',
@@ -109,22 +92,22 @@ const useStyles = makeStyles(theme => ({
   },
   sidebarAboutBox: {
     padding: theme.spacing(2),
-    
+    backgroundColor: theme.palette.grey[200],
   },
   sidebarSection: {
     marginTop: theme.spacing(3),
   },
   footer: {
-    
+    backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
 }));
 
 const sections = [
-  'CBD',
-  'Merch',
-  'About',
+  'Technology',
+  'Design',
+  'Culture',
   'Business',
   'Politics',
   'Opinion',
@@ -149,7 +132,7 @@ const featuredPosts = [
   },
 ];
 
-
+const posts = [post1, post2, post3];
 
 const archives = [
   'March 2020',
@@ -172,7 +155,6 @@ export default function Blog() {
   const classes = useStyles();
 
   return (
-   <MuiThemeProvider theme = {theme} > 
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
@@ -186,7 +168,7 @@ export default function Blog() {
             noWrap
             className={classes.toolbarTitle}
           >
-            S P A R K
+            Blog
           </Typography>
           <IconButton>
             <SearchIcon />
@@ -225,7 +207,7 @@ export default function Blog() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Mike Tyson releases new strand "Knockout"
+                    Title of a longer featured blog post
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
                     Multiple lines of text that form the lede, informing new readers quickly and
@@ -278,10 +260,14 @@ export default function Blog() {
             {/* Main content */}
             <Grid item xs={12} md={8}>
               <Typography variant="h6" gutterBottom>
-                From the Source
+                From the Firehose
               </Typography>
               <Divider />
-              
+              {posts.map(post => (
+                <Markdown className={classes.markdown} key={post.substring(0, 40)}>
+                  {post}
+                </Markdown>
+              ))}
             </Grid>
             {/* End main content */}
             {/* Sidebar */}
@@ -291,7 +277,8 @@ export default function Blog() {
                   About
                 </Typography>
                 <Typography>
-                  Spark is the only platform that will keep you in the loop for your favorite greens.
+                  Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit
+                  amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
                 </Typography>
               </Paper>
               <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
@@ -329,6 +316,5 @@ export default function Blog() {
       </footer>
       {/* End footer */}
     </React.Fragment>
-    </MuiThemeProvider>
   );
 }
