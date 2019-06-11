@@ -32,9 +32,9 @@ const theme = createMuiTheme({
 function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Built with love by the '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
+      {'Designed in love by the '}
+      <Link color="inherit" href="http://www.github.com/rivas1">
+        DOPAMINE
       </Link>
       {' team.'}
     </Typography>
@@ -59,7 +59,9 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    // backgroundColor: '#00c853',
+    color: '#00c853',
+    variant: 'outlined',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -83,14 +85,14 @@ export default function SignInSide() {
         <Grid item xs={false} sm={4} md={7} className={classes.image} />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
+            <Avatar className={classes.avatar} >
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h7">
-              Spark
+            <Typography component="h1" variant="h7" color="primary">
+             S P A R K
             </Typography>
-            <Typography component="h1" variant="h4">
-  			Sign in
+            <Typography component="h1" variant="h6">
+  			      SIGN IN 
             </Typography>
             <form className={classes.form} noValidate>
               <TextField
