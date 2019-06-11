@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     overflowX: 'auto',
     color: 'grey',
     padding: '0 30px',
-    boxShadow: '0 0px 50px 0px rgba(255, 255, 255, .3)',
+    boxShadow: '0 5px 50px 0px rgba(255, 255, 255, .3)',
   },
   toolbarLink: {
     padding: theme.spacing(1),
@@ -136,14 +136,14 @@ const sections = [
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'KHALIFA KUSH ON SALE FOR 50% OFF',
+    date: 'Jun 10',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: 'ALL 50 STATES LEGALIZE THE USE OF CANNABINOIDS',
+    date: 'June 9',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
   },
@@ -191,8 +191,8 @@ export default function Blog() {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button variant="outlined" size="small">
-            Sign up
+          <Button variant="outlined" size="small" href="/signin">
+            Sign in
           </Button>
         </Toolbar>
         <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
@@ -225,14 +225,13 @@ export default function Blog() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Mike Tyson releases new strand "Knockout"
+                    MIKE RELEASES 3 NEW STRANDS OF CANNABIS
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents.
+                    MIKE TYSON&apos;S CANNABIS BRAND IS UNDISPUTED 87 JUST LIKE THE LEGENDARY HEAVYWEIGHT
                   </Typography>
                   <Link variant="subtitle1" href="#">
-                    Continue reading…
+                    READ MORE
                   </Link>
                 </div>
               </Grid>
@@ -257,7 +256,7 @@ export default function Blog() {
                           {post.description}
                         </Typography>
                         <Typography variant="subtitle1" color="primary">
-                          Continue reading...
+                          READ MORE
                         </Typography>
                       </CardContent>
                     </div>
@@ -291,7 +290,7 @@ export default function Blog() {
                   About
                 </Typography>
                 <Typography>
-                  Spark is the only platform that will keep you in the loop for your favorite greens.
+                  <b>Spark</b> is the only platform that will keep you in the loop for your favorite favorite trees.
                 </Typography>
               </Paper>
               <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
@@ -306,7 +305,7 @@ export default function Blog() {
                 Social
               </Typography>
               {social.map(network => (
-                <Link display="block" variant="body1" href="#" key={network}>
+                <Link display="block" variant="body1" href= "#" key={network}>
                   {network}
                 </Link>
               ))}
