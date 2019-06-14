@@ -21,6 +21,7 @@ import Markdown from './Markdown';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
 import red from '@material-ui/core/colors/red'
 
+
 const theme = createMuiTheme({
 	palette: {
 		type: 'dark',
@@ -56,9 +57,10 @@ const useStyles = makeStyles(theme => ({
   toolbarSecondary: {
     justifyContent: 'space-between',
     overflowX: 'auto',
-    color: 'grey',
+    color: 'red',
     padding: '0 30px',
     boxShadow: '0 5px 50px 0px rgba(255, 255, 255, .3)',
+    
   },
   toolbarLink: {
     padding: theme.spacing(1),
@@ -123,15 +125,11 @@ const useStyles = makeStyles(theme => ({
 
 const sections = [
   'CBD',
-  'Merch',
-  'About',
-  'Business',
-  'Politics',
-  'Opinion',
-  'Science',
-  'Health',
-  'Style',
-  'Travel',
+  'MERCH',
+  'ABOUT',
+  'CONTACT',
+  'PARTNERS',
+  'SOCIAL',
 ];
 
 const featuredPosts = [
@@ -197,8 +195,8 @@ export default function Blog() {
         </Toolbar>
         <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
           {sections.map(section => (
-            <Link
-              color="inherit"
+            <Button
+              color='#00c853'
               noWrap
               key={section}
               variant="body2"
@@ -206,7 +204,7 @@ export default function Blog() {
               className={classes.toolbarLink}
             >
               {section}
-            </Link>
+            </Button>
           ))}
         </Toolbar>
         <main>

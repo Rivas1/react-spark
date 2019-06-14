@@ -22,8 +22,11 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#00c853'
-    }
+      main: '#00c853' // Neon green
+    },
+    secondary: {
+      main: '#651fff' // Neon purple
+    },
   }
 })
 
@@ -88,9 +91,9 @@ export default function SignInSide() {
             <Avatar className={classes.avatar} >
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h7" color="primary">
+            <Link component="h1" variant="h7" color="primary" href="/">
              S P A R K
-            </Typography>
+            </Link>
             <Typography component="h1" variant="h6">
   			      SIGN IN 
             </Typography>
