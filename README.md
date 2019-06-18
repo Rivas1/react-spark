@@ -1,24 +1,27 @@
-# README
+# Welcome to React-Spark
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
+* Ruby on Rails version:
+  * `<ruby 2.5.5p157 (2019-03-15 revision 67260) [i386-mingw32]>`
+  * `<Rails 5.2.3>`
+ 
 * System dependencies
-
+ 
 * Configuration
 
 * Database creation
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
+* How to run the test suite (run locally on machine)
+  1. Download repository
+  1. Locate repo
+  1. `<cd react-spark>` 
+  1. Now `<bundle install>` to download/install all the necessary dependencies
+  1. Once completed, you may now start the server `<rails s>`
+  1. Navigate to server http://localhost:3000
 * Deployment instructions
 
 * ...
