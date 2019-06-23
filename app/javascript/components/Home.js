@@ -20,6 +20,7 @@ import Markdown from './Markdown';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
 import red from '@material-ui/core/colors/red'
+import ComplexGrid from './ComplexGrid'
 
 
 const theme = createMuiTheme({
@@ -67,7 +68,7 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
 
   },
-  mainFeaturedPost: {
+  mainFeatureditem: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
@@ -85,7 +86,7 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     backgroundColor: 'rgba(0,0,0,.3)',
   },
-  mainFeaturedPostContent: {
+  mainFeatureditemContent: {
     position: 'relative',
     padding: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
@@ -98,12 +99,14 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     display: 'flex',
+    
   },
   cardDetails: {
     flex: 1,
   },
+  // Card picture
   cardMedia: {
-    width: 160,
+    width: 260,
   },
   markdown: {
     ...theme.typography.body2,
@@ -132,37 +135,38 @@ const sections = [
   'SOCIAL',
 ];
 
-const featuredPosts = [
+
+const featuredItems = [
   {
-    title: 'KHALIFA KUSH ON SALE FOR 50% OFF',
-    date: 'Jun 10',
+    title: '2004 FORD MUSTANG COBRA',
+    rating: '5 OUT OF 5',
+    price: '$25,599.00',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'One of the most powerful Mustangs ever made, 390HP/390TQ',
   },
   {
-    title: 'ALL 50 STATES LEGALIZE THE USE OF CANNABINOIDS',
-    date: 'June 9',
+    title: '2017 FORD MUSTANG GT',
+    rating: '5 OUT OF 5',
+    price: '$36,000.00',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'With the DOHC design, Ford squeezed out 435HP/400TQ from a 5.0L',
+  },
+  {
+    title: '2017 CHEVROLET CAMARO SS',
+    rating: '5 OUT OF 5',
+    price: '$41,000.00',
+    description:
+      'Old-schoool push-rod design making 455HP/455TQ from its 6.2L',
+  },
+  {
+    title: '2017 YAMAHA FZ-10',
+    rating: '5 OUT OF 5',
+    price: '$13,000.00',
+    description:
+      'Weighing in only at 463 lbs, this two-wheeler makes 160HP/85TQ',
   },
 ];
 
-
-
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019',
-];
 
 const social = ['GitHub', 'Twitter', 'Facebook'];
 
@@ -208,8 +212,8 @@ export default function Blog() {
           ))}
         </Toolbar>
         <main>
-          {/* Main featured post */}
-          <Paper className={classes.mainFeaturedPost}>
+          {/* Main featured item */}
+          <Paper className={classes.mainFeatureditem}>
             {/* Increase the priority of the hero background image */}
             {
               <img
@@ -221,7 +225,7 @@ export default function Blog() {
             <div className={classes.overlay} />
             <Grid container>
               <Grid item md={6}>
-                <div className={classes.mainFeaturedPostContent}>
+                <div className={classes.mainFeatureditemContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                     MIKE RELEASES 3 NEW STRANDS OF CANNABIS
                   </Typography>
@@ -235,26 +239,29 @@ export default function Blog() {
               </Grid>
             </Grid>
           </Paper>
-          {/* End main featured post */}
-          {/* Sub featured posts */}
+          {/* End main featured item */}
+          {/* Sub featured items */}
           <Grid container spacing={4} className={classes.cardGrid}>
-            {featuredPosts.map(post => (
-              <Grid item key={post.title} xs={12} md={6}>
+            {featuredItems.map(item => (
+              <Grid item key={item.title} xs={12} md={6}>
                 <CardActionArea component="a" href="#">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
                         <Typography component="h2" variant="h5">
-                          {post.title}
+                          {item.title}
                         </Typography>
                         <Typography variant="subtitle1" color="textSecondary">
-                          {post.date}
-                        </Typography>
+                          {item.rating}
+                       </Typography>
+                        <Typography variant="subtitle1" color="primary">
+                          {item.price}
+                       </Typography>
                         <Typography variant="subtitle1" paragraph>
-                          {post.description}
+                          {item.description}
                         </Typography>
                         <Typography variant="subtitle1" color="primary">
-                          READ MORE
+                          ADD TO CART
                         </Typography>
                       </CardContent>
                     </div>
@@ -270,7 +277,7 @@ export default function Blog() {
               </Grid>
             ))}
           </Grid>
-          {/* End sub featured posts */}
+          {/* End sub featured items */}
           <Grid container spacing={5} className={classes.mainGrid}>
             {/* Main content */}
             <Grid item xs={12} md={8}>
@@ -281,6 +288,7 @@ export default function Blog() {
               
             </Grid>
             {/* End main content */}
+
             {/* Sidebar */}
             <Grid item xs={12} md={4}>
               <Paper elevation={0} className={classes.sidebarAboutBox}>
@@ -291,14 +299,7 @@ export default function Blog() {
                   <b>Spark</b> is the only platform that will keep you in the loop for your favorite favorite trees.
                 </Typography>
               </Paper>
-              <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-                Archives
-              </Typography>
-              {archives.map(archive => (
-                <Link display="block" variant="body1" href="#" key={archive}>
-                  {archive}
-                </Link>
-              ))}
+              
               <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
                 Social
               </Typography>
