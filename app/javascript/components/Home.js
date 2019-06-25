@@ -21,6 +21,7 @@ import Markdown from './Markdown';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
 import red from '@material-ui/core/colors/red'
 import ComplexGrid from './ComplexGrid'
+import CarCard from './CarCard'
 
 
 const theme = createMuiTheme({
@@ -97,16 +98,24 @@ const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
+
+
   card: {
+    // colors
+    $colors: 'red',
     display: 'flex',
+    // borderLeft: '15px solid pink',
+    borderLeft: '15px solid',
+    // borderLeftColor: `${theme.palette.divider}`,
+    
     
   },
   cardDetails: {
-    flex: 1,
+    // flex: 1,
   },
   // Card picture
   cardMedia: {
-    width: 260,
+    minWidth: 220,
   },
   markdown: {
     ...theme.typography.body2,
@@ -143,6 +152,7 @@ const featuredItems = [
     price: '$25,599.00',
     description:
       'One of the most powerful Mustangs ever made, 390HP/390TQ',
+    color: 'red',
   },
   {
     title: '2017 FORD MUSTANG GT',
@@ -150,6 +160,7 @@ const featuredItems = [
     price: '$36,000.00',
     description:
       'With the DOHC design, Ford squeezed out 435HP/400TQ from a 5.0L',
+    color: 'green',
   },
   {
     title: '2017 CHEVROLET CAMARO SS',
@@ -157,6 +168,7 @@ const featuredItems = [
     price: '$41,000.00',
     description:
       'Old-schoool push-rod design making 455HP/455TQ from its 6.2L',
+    color: 'blue',
   },
   {
     title: '2017 YAMAHA FZ-10',
@@ -164,6 +176,7 @@ const featuredItems = [
     price: '$13,000.00',
     description:
       'Weighing in only at 463 lbs, this two-wheeler makes 160HP/85TQ',
+    color: 'yellow',
   },
 ];
 
@@ -240,8 +253,8 @@ export default function Blog() {
             </Grid>
           </Paper>
           {/* End main featured item */}
-          {/* Sub featured items */}
-          <Grid container spacing={4} className={classes.cardGrid}>
+          {/* Marketplace Grid */}
+          <Grid container spacing={1} className={classes.cardGrid}>
             {featuredItems.map(item => (
               <Grid item key={item.title} xs={12} md={6}>
                 <CardActionArea component="a" href="#">
@@ -268,7 +281,7 @@ export default function Blog() {
                     <Hidden xsDown>
                       <CardMedia
                         className={classes.cardMedia}
-                        image="https://source.unsplash.com/random"
+                        image="https://www.alfaromeoraleigh.com/assets/stock/colormatched_02/white/640/cc_2017foc050002_02_640/cc_2017foc050002_02_640_j7.jpg"
                         title="Image title"
                       />
                     </Hidden>
@@ -281,9 +294,7 @@ export default function Blog() {
           <Grid container spacing={5} className={classes.mainGrid}>
             {/* Main content */}
             <Grid item xs={12} md={8}>
-              <Typography variant="h6" gutterBottom>
-                From the Source
-              </Typography>
+              <CarCard/>
               <Divider />
               
             </Grid>
