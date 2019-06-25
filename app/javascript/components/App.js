@@ -12,9 +12,9 @@ class App extends React.Component {
 			<div> 
 				<BrowserRouter>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/about" component={About} />
-					<Route exact path="/contact" component={Contact} />
-					<Route exact path="/signin" component={SignIn} />
+					<Route path="/about" component={About} />
+					<Route path="/contact" component={Contact} />
+					<Route path="/signin" component={SignIn} />
 				</BrowserRouter>
 			 </div>
 		)

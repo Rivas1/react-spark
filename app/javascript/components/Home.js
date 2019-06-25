@@ -12,7 +12,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
@@ -22,7 +21,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import red from '@material-ui/core/colors/red';
 import ComplexGrid from './ComplexGrid';
 import CarCard from './CarCard';
-import { browserHistory } from "react-router";
+import { Link } from 'react-router-dom';
 
 
 const theme = createMuiTheme({
@@ -208,7 +207,7 @@ export default function Blog() {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button variant="outlined" size="small" href='/signin'>
+          <Button component={Link} to="/signin" variant="outlined" size="small">
             Sign in
           </Button>
         </Toolbar>
