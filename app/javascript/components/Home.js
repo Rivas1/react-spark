@@ -18,10 +18,11 @@ import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import Markdown from './Markdown';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
-import red from '@material-ui/core/colors/red'
-import ComplexGrid from './ComplexGrid'
-import CarCard from './CarCard'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import red from '@material-ui/core/colors/red';
+import ComplexGrid from './ComplexGrid';
+import CarCard from './CarCard';
+import { browserHistory } from "react-router";
 
 
 const theme = createMuiTheme({
@@ -37,8 +38,8 @@ function MadeWithLove() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Built with love by the '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
+      <Link color="inherit" href="https://github.com/rivas1">
+        Dopamine
       </Link>
       {' team.'}
     </Typography>
@@ -181,6 +182,7 @@ const featuredItems = [
 ];
 
 
+
 const social = ['GitHub', 'Twitter', 'Facebook'];
 
 export default function Blog() {
@@ -192,7 +194,7 @@ export default function Blog() {
       <CssBaseline />
       <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
-          <Button size="small">Subscribe</Button>
+         
           <Typography
             component="h2"
             variant="h5"
@@ -206,7 +208,7 @@ export default function Blog() {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button variant="outlined" size="small" href="/signin">
+          <Button variant="outlined" size="small" href='/signin'>
             Sign in
           </Button>
         </Toolbar>
@@ -328,7 +330,7 @@ export default function Blog() {
       <footer className={classes.footer}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            S P A R K
           </Typography>
           <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
             Something here to give the footer a purpose!
