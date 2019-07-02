@@ -20,7 +20,6 @@ import Markdown from './Markdown';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import red from '@material-ui/core/colors/red';
 import ComplexGrid from './ComplexGrid';
-import CarCard from './CarCard';
 import { Link } from 'react-router-dom';
 
 
@@ -195,19 +194,25 @@ export default function Blog() {
         <Toolbar className={classes.toolbar}>
          
           <Typography
-            component="h2"
+            component={Link}
             variant="h5"
             color="inherit"
             align="center"
             noWrap
             className={classes.toolbarTitle}
+            to="/" 
           >
             S P A R K
           </Typography>
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button component={Link} to="/signin" variant="outlined" size="small">
+          <Button 
+            component={Link}
+            to="/signin" 
+            variant="outlined" 
+            size="small"
+          >
             Sign in
           </Button>
         </Toolbar>
@@ -295,7 +300,7 @@ export default function Blog() {
           <Grid container spacing={5} className={classes.mainGrid}>
             {/* Main content */}
             <Grid item xs={12} md={8}>
-              <CarCard/>
+              
               <Divider />
               
             </Grid>

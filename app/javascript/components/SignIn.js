@@ -91,9 +91,9 @@ export default function SignInSide() {
             <Avatar className={classes.avatar} >
               <LockOutlinedIcon />
             </Avatar>
-            <Link component="h1" variant="h7" color="primary" href="/">
+            <Typography component={Link} to="/" variant="h7" color="primary">
              S P A R K
-            </Link>
+            </Typography>
             <Typography component="h1" variant="h6">
   			      SIGN IN 
             </Typography>
