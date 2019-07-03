@@ -41,7 +41,7 @@ function MadeWithLove() {
       </Link>
       {' team.'}
     </Typography>
-  );
+);
 }
 
 const useStyles = makeStyles(theme => ({
@@ -92,7 +92,7 @@ export default function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component={Link} to="/" variant="h7" color="primary">
-             S P A R K
+             L I V E L I T
             </Typography>
             <Typography component="h1" variant="h6">
   			      SIGN IN 

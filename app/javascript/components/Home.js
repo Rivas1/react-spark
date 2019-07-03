@@ -202,7 +202,7 @@ export default function Blog() {
             className={classes.toolbarTitle}
             to="/" 
           >
-            S P A R K
+            L I V E L I T
           </Typography>
           <IconButton>
             <SearchIcon />
