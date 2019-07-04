@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import img1 from "../../assets/images/2019_ford_mustang_gt_white.jpg";
+
 import "../stylesheets/card-style.css";
+import img1 from '../../assets/images/2004_ford_mustang_cobra_yellow.jpg';
+import img2 from '../../assets/images/2018_chevy_camaro_ss_blue.jpg';
+import img3 from '../../assets/images/2019_ford_mustang_gt_white.jpg';
 
 
 export class Car extends Component {
 	getStyle = () => {
 		return {
 			// backgroundColor: this.props.car.color
-			backgroundColor: '#f4f4f4',
-			borderLeft: '15px solid',
+			backgroundColor: 'inherit',
+			borderLeft: '8px solid',
 			borderLeftColor: this.props.car.color
 		}
 	}
@@ -18,14 +21,13 @@ export class Car extends Component {
 	render() {
 		return (
 			<div style={this.getStyle()} className="card text-center">
-				
 				<div className='overflow'>
-					<img src={img1} alt='Image 1' className="card-img-top"/>
+					<img src={img1}  alt='Image' className="card-img-top"/>
 				</div>
-				<div className='card-body text-dark'>
+				<div className='card-body'>
 					<h4 className="card-title">{this.props.car.title}</h4>
-					<p className='card-text text-secondary'>
-						{this.props.car.description}
+					<p className='card-text'>
+						{this.props.car.price}
 					</p>
 					<a href="#" className='btn btn-outline-success'>Go Anywhere</a>
 				</div>
